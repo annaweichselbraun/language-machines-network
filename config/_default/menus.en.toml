@@ -1,4 +1,9 @@
 [[main]]
+  name = "The Network"
+  pageRef = "/"
+  weight = 0
+
+[[main]]
   name = "Calendar"
   pageRef = "calendar"
   weight = 1
