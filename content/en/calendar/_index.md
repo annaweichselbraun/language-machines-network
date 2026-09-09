@@ -26,7 +26,6 @@ The Language Machines Reading Group meets monthly online to discuss pre-circulat
 | 15 June 2026 | Zion Mengesha and Sharese King | Synthetic Selves: Race, Gender, Sexuality and the Language of AI Personas |
 | 18 May 2026 | Lisa Messeri | AI Surrogates and illusions of generalizability in cognitive science |
 | 20 April 2026 | Justine Zhang | LLMs and the logistics imaginary |
-| 16 March 2026 | TBA | TBA |
 | 16 February 2026 | Spencer Kaplan | Artificial Agency / "You can just do things" |
 | 19 January 2026 | Leif Weatherby | Talk on his book [*Language Machines: Cultural AI and the End of Remainder Humanism*](https://www.upress.umn.edu/9781517919320/language-machines/) |
 | 15 December 2025 | Jack La Violette and Mikael Brunila | Metalanguage, ideology, and alienation in the age of generative AI |
@@ -38,8 +37,8 @@ The Language Machines Reading Group meets monthly online to discuss pre-circulat
 | 21 April 2025 | Zachary | What is the Matrix?: Linguistic Tokens in Higher Dimensions from *wafq* Talismans to Machine Learning Algorithms |
 | 17 March 2025 | Nils Klowait and Maria Erofeeva | Nonhuman Situational Enmeshment – How Participants Build Temporal Infrastructures for ChatGPT |
 | 17 February 2025 | Ole Puetz | Co-text is all you need |
-| January 2025 | Courtney Handman | |
-| December 2024 | Webb Keane | |
-| November 2024 | Gabriella Chronis | |
-| October 2024 | Paul Kockelman | |
-| September 2024 | Michael Castelle | |
+| January 2025 | Courtney Handman | The Chatbot's Real Self |
+| December 2024 | Webb Keane | Animals, Robots, Gods |
+| November 2024 | Gabriella Chronis | NLP as Language Ideology |
+| October 2024 | Paul Kockelman | Last Words |
+| September 2024 | Michael Castelle | Contextualizing High-Dimensional Communication |
