@@ -1,0 +1,85 @@
+{{ define "main" }}
+  <header>
+    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+  </header>
+  <section class="prose mt-0 max-w-full dark:prose-invert">
+    {{ .Content | emojify }}
+  </section>
+
+  {{ $groupId := .Site.Params.citeClub.zoteroGroupId }}
+  {{ $pubTag := .Site.Params.citeClub.publicationTag }}
+  {{ $apiURL := printf "https://api.zotero.org/groups/%s/items/top?format=json&include=data&limit=100&sort=dateAdded&direction=desc" $groupId }}
+
+  {{ $publications := slice }}
+  {{ $readings := slice }}
+  {{ $fetchFailed := false }}
+
+  {{ with try (resources.GetRemote $apiURL) }}
+    {{ with .Err }}
+      {{ warnf "Cite Club: could not reach Zotero API: %s" . }}
+      {{ $fetchFailed = true }}
+    {{ else with .Value }}
+      {{ $items := . | transform.Unmarshal }}
+      {{ range $items }}
+        {{ $data := .data }}
+        {{ $tagged := false }}
+        {{ range $data.tags }}
+          {{ if eq .tag $pubTag }}
+            {{ $tagged = true }}
+          {{ end }}
+        {{ end }}
+        {{ if $tagged }}
+          {{ $publications = $publications | append $data }}
+        {{ else }}
+          {{ $readings = $readings | append $data }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{ warnf "Cite Club: resources.GetRemote is unavailable in this build environment." }}
+    {{ $fetchFailed = true }}
+  {{ end }}
+
+  {{ if $fetchFailed }}
+    <section class="prose mt-10 max-w-full dark:prose-invert">
+      <p class="border-t py-8">
+        <em>We couldn't load the library from Zotero during this build. Check back shortly, or browse the library directly on
+        <a href="https://www.zotero.org/groups/{{ $groupId }}">Zotero</a>.</em>
+      </p>
+    </section>
+  {{ else }}
+    <nav class="prose mt-10 max-w-full dark:prose-invert">
+      <p>
+        Jump to:
+        <a href="#our-publications">Our Publications</a> ({{ len $publications }}) ·
+        <a href="#reading-list">Reading List</a> ({{ len $readings }})
+      </p>
+    </nav>
+
+    <section id="our-publications" class="prose mt-10 max-w-full dark:prose-invert">
+      <h2>Our Publications</h2>
+      {{ if $publications }}
+        <ul>
+          {{ range $publications }}
+            {{ partial "cite-club/item.html" . }}
+          {{ end }}
+        </ul>
+      {{ else }}
+        <p><em>Tag items in the group library with "{{ $pubTag }}" to have them listed here.</em></p>
+      {{ end }}
+    </section>
+
+    <section id="reading-list" class="prose mt-10 max-w-full dark:prose-invert">
+      <h2>Reading List</h2>
+      {{ if $readings }}
+        <ul>
+          {{ range $readings }}
+            {{ partial "cite-club/item.html" . }}
+          {{ end }}
+        </ul>
+      {{ else }}
+        <p><em>No items yet.</em></p>
+      {{ end }}
+    </section>
+  {{ end }}
+{{ end }}

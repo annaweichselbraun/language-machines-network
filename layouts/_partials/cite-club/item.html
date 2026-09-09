@@ -1,0 +1,35 @@
+{{ $data := . }}
+{{ $title := $data.title | default "Untitled item" }}
+{{ $link := $data.url }}
+{{ if and (not $link) $data.DOI }}
+  {{ $link = printf "https://doi.org/%s" $data.DOI }}
+{{ end }}
+
+{{ $creatorNames := slice }}
+{{ range $data.creators }}
+  {{ $name := "" }}
+  {{ if .name }}
+    {{ $name = .name }}
+  {{ else }}
+    {{ $name = (printf "%s %s" (.firstName | default "") (.lastName | default "")) | strings.TrimSpace }}
+  {{ end }}
+  {{ if $name }}
+    {{ $creatorNames = $creatorNames | append $name }}
+  {{ end }}
+{{ end }}
+
+<li id="zotero-{{ $data.key }}">
+  {{ if $link }}
+    <a href="{{ $link }}" target="_blank" rel="noopener">{{ $title }}</a>
+  {{ else }}
+    {{ $title }}
+  {{ end }}
+  {{ if $creatorNames }} — {{ delimit $creatorNames ", " }}{{ end }}
+  {{ if or $data.publicationTitle $data.date }}
+    <br />
+    <span class="text-sm text-neutral-500 dark:text-neutral-400">
+      {{ if $data.publicationTitle }}{{ $data.publicationTitle }}{{ end }}
+      {{ if $data.date }}({{ $data.date }}){{ end }}
+    </span>
+  {{ end }}
+</li>

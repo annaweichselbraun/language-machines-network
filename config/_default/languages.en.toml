@@ -1,0 +1,11 @@
+label = "English"
+locale = "en-us"
+contentDir = "content/en"
+weight = 1
+
+[params]
+  displayName = "EN"
+  description = "Language Machines Network — a research consortium at the intersection of linguistic anthropology, AI governance, and STS."
+
+[params.author]
+  name = "Language Machines Network"

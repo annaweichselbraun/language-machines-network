@@ -1,0 +1,19 @@
+[[main]]
+  name = "Calendar"
+  pageRef = "calendar"
+  weight = 1
+
+[[main]]
+  name = "Cite Club"
+  pageRef = "cite-club"
+  weight = 2
+
+[[main]]
+  name = "Links"
+  pageRef = "links"
+  weight = 3
+
+[[main]]
+  name = "Who We Are"
+  pageRef = "who-we-are"
+  weight = 4
