@@ -1,12 +1,15 @@
 /* Custom typography for Language Machines Network
-   Body text: Inter (clean sans-serif)
-   Headings, page/article titles, and the site name: Newsreader (editorial serif) */
+   One grotesque family (Archivo) site-wide:
+   - Body text at a regular weight
+   - Headings, page/article titles, and the site name at a heavy (black) weight */
 
 html {
-  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6,
 header a[rel='me'] {
-  font-family: 'Newsreader', ui-serif, Georgia, serif;
+  font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.01em;
 }
