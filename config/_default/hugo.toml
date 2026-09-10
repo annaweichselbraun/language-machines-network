@@ -2,7 +2,7 @@ theme = "congo"
 defaultContentLanguage = "en"
 
 # Set this to your registered domain once you have it, e.g. "https://languagemachines.net/"
-baseURL = "https://example.com/"
+baseURL = "https://languagemachines.net/"
 
 enableRobotsTXT = true
 summaryLength = 0
