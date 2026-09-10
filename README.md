@@ -24,19 +24,32 @@ To move an item between the two lists, just add or remove that tag on the item i
 
 If you'd rather use a different tag name, change `publicationTag` in `config/_default/params.toml`.
 
-## Adding photos (Who We Are)
+## Adding people (Who We Are)
 
-Put image files directly in `content/en/who-we-are/` and reference them in the Markdown, e.g. `![Anna](anna.jpg)`.
+Each organizer is a `person` block in `content/en/who-we-are/_index.md`, e.g.:
+
+```
+{{< person name="Anna Weichselbraun" role="Role/title here." photo="Anna.png" >}}
+Bio text goes here, and can use normal Markdown.
+{{< /person >}}
+```
+
+To add someone new, copy one whole block (from the opening `{{< person ... >}}` tag to the closing `{{< /person >}}` tag) and fill in their details. `photo` can be a filename of an image placed directly in `content/en/who-we-are/` (as in the example above), or a full image URL.
 
 ## Previewing changes locally
 
-Install Hugo (extended version, v0.166.0 or later) and run:
+Before pushing to GitHub, you can preview changes in a browser on your own computer:
 
-```
-hugo server
-```
+1. Install Hugo (extended version, v0.166.0 or later) — on a Mac, the easiest way is `brew install hugo`.
+2. In this folder, run:
+   ```
+   hugo server
+   ```
+3. Open the URL it prints (usually `http://localhost:1313`). The preview updates live as you edit files.
 
-Then open the URL it prints (usually `http://localhost:1313`). The preview updates live as you edit files.
+This preview is a reliable stand-in for what will actually deploy: the site's CSS is a pre-built stylesheet (see note below), not something regenerated at build time, so `hugo server` renders pages using the exact same styling GitHub Actions uses — no surprises between what you see locally and what goes live.
+
+**Note for anyone editing the theme's templates/layouts:** this site's GitHub Actions workflow only runs `hugo --minify` — it does not run a Tailwind CSS build step. That means the compiled stylesheet (`themes/congo/assets/css/compiled/main.css`) is fixed at whatever the theme shipped with; any *brand-new* Tailwind utility-class combination added to a custom layout or shortcode (one not already used elsewhere in the theme) will silently have no effect, both locally and once deployed. When custom layout work needs new styling, write plain CSS in `assets/css/custom.css` instead (see the `.person` rules there for an example) rather than inventing new Tailwind classes.
 
 ## Deployment
 
