@@ -1,7 +1,7 @@
 # -- Theme Options --
 # Refer to the Congo theme docs for details: https://jpanther.github.io/congo/docs/configuration/#theme-parameters
 
-colorScheme = "congo"
+colorScheme = "fire"
 defaultAppearance = "light"
 autoSwitchAppearance = true
 

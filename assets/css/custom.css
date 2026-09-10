@@ -1,0 +1,12 @@
+/* Custom typography for Language Machines Network
+   Body text: Inter (clean sans-serif)
+   Headings, page/article titles, and the site name: Newsreader (editorial serif) */
+
+html {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+header a[rel='me'] {
+  font-family: 'Newsreader', ui-serif, Georgia, serif;
+}
