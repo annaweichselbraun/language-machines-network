@@ -14,14 +14,5 @@ title: "Links"
   start editing.
 -->
 
-## People
-
--
-
-## Projects & Networks
-
--
-
-## Other
-
--
+- [Newsletter: Language Unbothered](https://languageunbothered.substack.com/) — Naomi Truan's (Leiden) substack on sociolinguistics and LLMs.
+- [Critical AI Language and Literacy Lab](https://criticalailiteracylab.univie.ac.at/) — Britta Schneider's lab at the University of Vienna
