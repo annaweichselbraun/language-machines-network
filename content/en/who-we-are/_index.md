@@ -3,38 +3,28 @@ title: "Who We Are"
 ---
 
 The Network grew out of a double panel on “LLMs and the Language Sciences: Material, Semiotic, and Linguistic Perspectives from STS and Linguistic Anthropology” which we organized at EASST-4S in Amsterdam in July 2024. Previously, Siri organized the [Technolinguistic in Practice conference](https://www.mediacoop.uni-siegen.de/en/events/technolinguistics-in-practice/) at Siegen in 2024.
-<!--
-  Placeholder profiles below — replace name, role, and bio text for each
-  organizer, and add a photo. To add a photo: put an image file in this same
-  folder (content/en/who-we-are/) and reference it below, e.g. ![Anna](anna.jpg)
 
-  Copy the "###" block to add more people.
+<!--
+  Each person below is one "person" block. Copy an entire block, start to
+  finish, to add a new organizer.
+
+  - name / role / photo are set as attributes on the opening tag.
+  - photo can be a URL (like the placeholders below), or a filename of an
+    image you've placed in this same folder (content/en/who-we-are/), e.g.
+    photo="anna.jpg" (no quotes around the filename in the actual folder,
+    just in the attribute).
+  - The bio text goes between the opening and closing tag and supports
+    normal Markdown.
 -->
 
-### Siri Lamoureaux
-
-*Role/title here.*
-
-![Placeholder](https://placehold.co/200x200?text=Photo)
-
+{{< person name="Siri Lamoureaux" role="Role/title here." photo="https://placehold.co/200x200?text=Photo" >}}
 Bio placeholder — a few sentences about background and research interests.
+{{< /person >}}
 
----
-
-### Anna Weichselbraun
-
-*Role/title here.*
-
-![Placeholder](https://placehold.co/200x200?text=Photo)
-
+{{< person name="Anna Weichselbraun" role="Role/title here." photo="https://placehold.co/200x200?text=Photo" >}}
 Bio placeholder — a few sentences about background and research interests.
+{{< /person >}}
 
----
-
-### Michael Castelle
-
-*Role/title here.*
-
-![Placeholder](https://placehold.co/200x200?text=Photo)
-
+{{< person name="Michael Castelle" role="Role/title here." photo="https://placehold.co/200x200?text=Photo" >}}
 Bio placeholder — a few sentences about background and research interests.
+{{< /person >}}

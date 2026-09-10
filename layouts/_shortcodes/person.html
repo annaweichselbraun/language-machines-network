@@ -1,0 +1,24 @@
+{{ $name := .Get "name" }}
+{{ $role := .Get "role" }}
+{{ $photo := .Get "photo" }}
+<div class="not-prose flex flex-col gap-4 border-t border-neutral-200 py-8 first:border-t-0 first:pt-0 dark:border-neutral-700 sm:flex-row sm:gap-8">
+  <div class="flex shrink-0 flex-row items-center gap-4 sm:w-44 sm:flex-col sm:items-start sm:gap-3">
+    {{ with $photo }}
+      <img
+        src="{{ . }}"
+        alt="{{ $name }}"
+        class="h-16 w-16 shrink-0 rounded-full object-cover sm:h-28 sm:w-28"
+        loading="lazy"
+      />
+    {{ end }}
+    <div>
+      <div class="font-bold text-neutral-900 dark:text-neutral">{{ $name }}</div>
+      {{ with $role }}
+        <div class="text-sm italic text-neutral-500 dark:text-neutral-400">{{ . }}</div>
+      {{ end }}
+    </div>
+  </div>
+  <div class="prose max-w-none grow dark:prose-invert">
+    {{ .Page.RenderString .Inner }}
+  </div>
+</div>
