@@ -15,14 +15,14 @@ The Network grew out of a double panel on “LLMs and the Language Sciences: Mat
     just in the attribute).
   - The bio text goes between the opening and closing tag and supports
     normal Markdown.
--->
+    -->
 
 {{< person name="Siri Lamoureaux" role="Role/title here." photo="https://placehold.co/200x200?text=Photo" >}}
 Bio placeholder — a few sentences about background and research interests.
 {{< /person >}}
 
 {{< person name="Anna Weichselbraun" role="Role/title here." photo="Anna.png" >}}
-Bio placeholder — a few sentences about background and research interests.
+Anna Weichselbraun is a sociocultural and linguistic anthropologist affiliated with the University of Vienna. Her ethnographic research examines the intersections of language, technology, law, and expertise, with a particular focus on digital technologies and nuclear governance. Her current work explores how language ideologies shape the development, evaluation, and regulation of large language models. A list of her publications is available at: https://orcid.org/0000-0002-3705-9968.
 {{< /person >}}
 
 {{< person name="Michael Castelle" role="Role/title here." photo="https://placehold.co/200x200?text=Photo" >}}
