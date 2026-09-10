@@ -67,3 +67,11 @@ fingerprintAlgorithm = "sha256"
   # Items tagged with this Zotero tag are shown under "Our Publications";
   # everything else in the library is shown under "Reading List".
   publicationTag = "network-publication"
+
+# -- Site-specific settings used by the "addcal" shortcode (Calendar page) --
+[calendar]
+  # Local time in Vienna (Europe/Vienna) that reading-group meetings start/end.
+  # Used to build the downloadable .ics "add to calendar" links; the shortcode
+  # converts this to UTC automatically, correctly handling CET/CEST.
+  startTime = "18:00"
+  endTime = "20:00"

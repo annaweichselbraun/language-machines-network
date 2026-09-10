@@ -6,18 +6,20 @@ The Language Machines Reading Group meets monthly online to discuss pre-circulat
 
 ## Upcoming
 
+Click "+ Add to calendar" on any row below to download a calendar invite for that meeting (18:00–20:00 Vienna time). Join details are sent separately on the mailing list before each meeting.
+
 | Date | Presenter | Title |
 | --- | --- | --- |
-| 21 September 2026 | Austin Kozlowski (University of Chicago) | Computational structuralism |
-| 19 October 2026 | Graham Jones (MIT) | AI and Education (The MIT Report) |
-| 16 November 2026 | Lucy Suchman (Lancaster) | What is language? |
-| 21 December 2026 | Haley Lepp (Stanford) | Populist Science: The collapse of peer review and rise of virality-based evaluation in AI research |
-| 18 January 2027 | Jason Litzenberg | Chapter from his forthcoming book *The Language Singularity: Posthumanist Language Teaching in the Age of AI* |
-| 15 February 2027 | TBA | TBA |
-| 15 March 2027 | TBA | TBA |
-| 19 April 2027 | Qi Hong (Toronto) | Automatic Speech Recognition and China's Cold War Technopolitics, 1958–1991 |
-| 17 May 2027 *(tentative — may move for Whit Monday)* | TBA | TBA |
-| 12 June 2027 | TBA | TBA |
+| 21 September 2026 | Austin Kozlowski (University of Chicago) | Computational structuralism<br>{{< addcal date="2026-09-21" title="Austin Kozlowski: Computational structuralism" >}} |
+| 19 October 2026 | Graham Jones (MIT) | AI and Education (The MIT Report)<br>{{< addcal date="2026-10-19" title="Graham Jones: AI and Education (The MIT Report)" >}} |
+| 16 November 2026 | Lucy Suchman (Lancaster) | What is language?<br>{{< addcal date="2026-11-16" title="Lucy Suchman: What is language?" >}} |
+| 21 December 2026 | Haley Lepp (Stanford) | Populist Science: The collapse of peer review and rise of virality-based evaluation in AI research<br>{{< addcal date="2026-12-21" title="Haley Lepp: Populist Science" >}} |
+| 18 January 2027 | Jason Litzenberg | Chapter from his forthcoming book *The Language Singularity: Posthumanist Language Teaching in the Age of AI*<br>{{< addcal date="2027-01-18" title="Jason Litzenberg: The Language Singularity (book chapter)" >}} |
+| 15 February 2027 | TBA | TBA<br>{{< addcal date="2027-02-15" title="TBA" >}} |
+| 15 March 2027 | TBA | TBA<br>{{< addcal date="2027-03-15" title="TBA" >}} |
+| 19 April 2027 | Qi Hong (Toronto) | Automatic Speech Recognition and China's Cold War Technopolitics, 1958–1991<br>{{< addcal date="2027-04-19" title="Qi Hong: Automatic Speech Recognition and China's Cold War Technopolitics" >}} |
+| 17 May 2027 *(tentative — may move for Whit Monday)* | TBA | TBA<br>{{< addcal date="2027-05-17" title="TBA (date tentative, may move for Whit Monday)" >}} |
+| 12 June 2027 | TBA | TBA<br>{{< addcal date="2027-06-12" title="TBA" >}} |
 
 ## Past Meetings
 

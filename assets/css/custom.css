@@ -14,6 +14,15 @@ header a[rel='me'] {
   letter-spacing: -0.01em;
 }
 
+/* Markdown tables (Calendar, etc.) can be wider than a phone screen. Rather
+   than letting the last column get clipped off the edge, make the table
+   itself scroll horizontally so all columns stay readable. */
+.prose table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* "person" shortcode (used on the Who We Are page): a small round photo and
    name/role on one side, bio text alongside it. Written as plain CSS
    (instead of Tailwind utility classes) because this site's build only
@@ -98,4 +107,36 @@ html.dark .person__role {
   .person__bio {
     flex-grow: 1;
   }
+}
+
+/* "addcal" shortcode (used on the Calendar page): the "+ Add to calendar"
+   download link, styled as a small pill/button rather than a plain text
+   link, so it stands out under the meeting title. Plain CSS, for the same
+   reason as the "person" block above. */
+
+.addcal-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  color: rgb(var(--color-neutral-900));
+  background-color: rgb(var(--color-primary-200));
+  border-radius: 9999px;
+  text-decoration: none !important;
+}
+
+.addcal-link:hover {
+  background-color: rgb(var(--color-primary-300));
+}
+
+html.dark .addcal-link {
+  color: rgb(var(--color-neutral-900));
+  background-color: rgb(var(--color-primary-400));
+}
+
+html.dark .addcal-link:hover {
+  background-color: rgb(var(--color-primary-300));
 }

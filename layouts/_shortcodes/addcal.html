@@ -1,0 +1,51 @@
+{{/*
+  "Add to calendar" link — generates a downloadable .ics file for one
+  reading-group meeting.
+
+  Usage:
+    {{< addcal date="2026-09-21" title="Austin Kozlowski: Computational structuralism" >}}
+
+  - date: the meeting date, as YYYY-MM-DD.
+  - title: short text used as the calendar event's title.
+
+  Start/end time (local Vienna time) come from [calendar] in
+  config/_default/params.toml. The conversion to UTC is timezone-aware, so it
+  is correct on both sides of the CET/CEST switch.
+*/}}
+
+{{ $date := .Get "date" }}
+{{ $title := .Get "title" }}
+
+{{ if not $date }}
+  {{ errorf "addcal shortcode: missing required 'date' parameter (%s)" .Position }}
+{{ end }}
+{{ if not $title }}
+  {{ errorf "addcal shortcode: missing required 'title' parameter (%s)" .Position }}
+{{ end }}
+
+{{ $startTime := .Site.Params.calendar.startTime | default "18:00" }}
+{{ $endTime := .Site.Params.calendar.endTime | default "20:00" }}
+
+{{ $start := time.AsTime (printf "%sT%s:00" $date $startTime) "Europe/Vienna" }}
+{{ $end := time.AsTime (printf "%sT%s:00" $date $endTime) "Europe/Vienna" }}
+
+{{ $dtstart := $start.UTC.Format "20060102T150405Z" }}
+{{ $dtend := $end.UTC.Format "20060102T150405Z" }}
+{{ $dtstamp := now.UTC.Format "20060102T150405Z" }}
+{{ $uid := printf "%s-languagemachines.net" $date }}
+
+{{/* Basic RFC5545 text escaping (semicolon, comma), required for TEXT values.
+     Replacements are Go raw-string literals (backticks) so the backslash
+     isn't itself subject to Go string-escaping. */}}
+{{ $summary := printf "Language Machines Reading Group: %s" $title }}
+{{ $summary = $summary | replaceRE ";" `\;` }}
+{{ $summary = $summary | replaceRE "," `\,` }}
+
+{{ $description := "Language Machines reading-group meeting. To join, email languagemachinesnetwork@gmail.com for the video-call link." }}
+{{ $description = $description | replaceRE ";" `\;` }}
+{{ $description = $description | replaceRE "," `\,` }}
+
+{{ $ics := printf "BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Language Machines Network//Calendar//EN\r\nCALSCALE:GREGORIAN\r\nBEGIN:VEVENT\r\nUID:%s\r\nDTSTAMP:%s\r\nDTSTART:%s\r\nDTEND:%s\r\nSUMMARY:%s\r\nDESCRIPTION:%s\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n" $uid $dtstamp $dtstart $dtend $summary $description }}
+
+{{ $href := printf "data:text/calendar;charset=utf-8;base64,%s" (base64Encode $ics) }}
+<a href="{{ $href | safeURL }}" download="{{ $date }}-language-machines-reading-group.ics" class="not-prose addcal-link">+ Add to calendar</a>
