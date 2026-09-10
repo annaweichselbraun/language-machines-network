@@ -2,8 +2,10 @@
   <header>
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
   </header>
-  <section class="prose mt-0 max-w-full dark:prose-invert">
-    {{ .Content | emojify }}
+  <section class="prose mt-0 flex max-w-full flex-col dark:prose-invert lg:flex-row">
+    <div class="min-h-0 min-w-0 max-w-prose grow">
+      {{ .Content | emojify }}
+    </div>
   </section>
 
   {{ $groupId := .Site.Params.citeClub.zoteroGroupId }}
@@ -41,45 +43,53 @@
   {{ end }}
 
   {{ if $fetchFailed }}
-    <section class="prose mt-10 max-w-full dark:prose-invert">
-      <p class="border-t py-8">
-        <em>We couldn't load the library from Zotero during this build. Check back shortly, or browse the library directly on
-        <a href="https://www.zotero.org/groups/{{ $groupId }}">Zotero</a>.</em>
-      </p>
+    <section class="prose mt-10 flex max-w-full flex-col dark:prose-invert lg:flex-row">
+      <div class="min-h-0 min-w-0 max-w-prose grow">
+        <p class="border-t py-8">
+          <em>We couldn't load the library from Zotero during this build. Check back shortly, or browse the library directly on
+          <a href="https://www.zotero.org/groups/{{ $groupId }}">Zotero</a>.</em>
+        </p>
+      </div>
     </section>
   {{ else }}
-    <nav class="prose mt-10 max-w-full dark:prose-invert">
-      <p>
-        Jump to:
-        <a href="#our-publications">Our Publications</a> ({{ len $publications }}) ·
-        <a href="#reading-list">Reading List</a> ({{ len $readings }})
-      </p>
+    <nav class="prose mt-10 flex max-w-full flex-col dark:prose-invert lg:flex-row">
+      <div class="min-h-0 min-w-0 max-w-prose grow">
+        <p>
+          Jump to:
+          <a href="#our-publications">Our Publications</a> ({{ len $publications }}) ·
+          <a href="#reading-list">Reading List</a> ({{ len $readings }})
+        </p>
+      </div>
     </nav>
 
-    <section id="our-publications" class="prose mt-10 max-w-full dark:prose-invert">
-      <h2>Our Publications</h2>
-      {{ if $publications }}
-        <ul>
-          {{ range $publications }}
-            {{ partial "cite-club/item.html" . }}
-          {{ end }}
-        </ul>
-      {{ else }}
-        <p><em>Tag items in the group library with "{{ $pubTag }}" to have them listed here.</em></p>
-      {{ end }}
+    <section id="our-publications" class="prose mt-10 flex max-w-full flex-col dark:prose-invert lg:flex-row">
+      <div class="min-h-0 min-w-0 max-w-prose grow">
+        <h2>Our Publications</h2>
+        {{ if $publications }}
+          <ul>
+            {{ range $publications }}
+              {{ partial "cite-club/item.html" . }}
+            {{ end }}
+          </ul>
+        {{ else }}
+          <p><em>Tag items in the group library with "{{ $pubTag }}" to have them listed here.</em></p>
+        {{ end }}
+      </div>
     </section>
 
-    <section id="reading-list" class="prose mt-10 max-w-full dark:prose-invert">
-      <h2>Reading List</h2>
-      {{ if $readings }}
-        <ul>
-          {{ range $readings }}
-            {{ partial "cite-club/item.html" . }}
-          {{ end }}
-        </ul>
-      {{ else }}
-        <p><em>No items yet.</em></p>
-      {{ end }}
+    <section id="reading-list" class="prose mt-10 flex max-w-full flex-col dark:prose-invert lg:flex-row">
+      <div class="min-h-0 min-w-0 max-w-prose grow">
+        <h2>Reading List</h2>
+        {{ if $readings }}
+          <ul>
+            {{ range $readings }}
+              {{ partial "cite-club/item.html" . }}
+            {{ end }}
+          </ul>
+        {{ else }}
+          <p><em>No items yet.</em></p>
+        {{ end }}
+      </div>
     </section>
   {{ end }}
 {{ end }}
