@@ -21,7 +21,7 @@ The Network grew out of a double panel on “LLMs and the Language Sciences: Mat
 Bio placeholder — a few sentences about background and research interests.
 {{< /person >}}
 
-{{< person name="Anna Weichselbraun" role="Role/title here." photo="https://placehold.co/200x200?text=Photo" >}}
+{{< person name="Anna Weichselbraun" role="Role/title here." photo="Anna.png" >}}
 Bio placeholder — a few sentences about background and research interests.
 {{< /person >}}
 
