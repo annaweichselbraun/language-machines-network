@@ -10,7 +10,6 @@ Click "+ Add to calendar" on any row below to download a calendar invite for tha
 
 | Date | Presenter | Title |
 | --- | --- | --- |
-| 21 September 2026 | Austin Kozlowski (University of Chicago) | Computational structuralism<br>{{< addcal date="2026-09-21" title="Austin Kozlowski: Computational structuralism" >}} |
 | 19 October 2026 | Graham Jones (MIT) | AI and Education (The MIT Report)<br>{{< addcal date="2026-10-19" title="Graham Jones: AI and Education (The MIT Report)" >}} |
 | 16 November 2026 | Lucy Suchman (Lancaster) | What is language?<br>{{< addcal date="2026-11-16" title="Lucy Suchman: What is language?" >}} |
 | 21 December 2026 | Haley Lepp (Stanford) | Populist Science: The collapse of peer review and rise of virality-based evaluation in AI research<br>{{< addcal date="2026-12-21" title="Haley Lepp: Populist Science" >}} |
@@ -25,6 +24,7 @@ Click "+ Add to calendar" on any row below to download a calendar invite for tha
 
 | Date | Presenter | Title |
 | --- | --- | --- |
+| 21 September 2026 | Austin Kozlowski (University of Chicago) | Computational structuralism |
 | 15 June 2026 | Zion Mengesha and Sharese King | Synthetic Selves: Race, Gender, Sexuality and the Language of AI Personas |
 | 18 May 2026 | Lisa Messeri | AI Surrogates and illusions of generalizability in cognitive science |
 | 20 April 2026 | Justine Zhang | LLMs and the logistics imaginary |
